@@ -12,10 +12,14 @@ class ProductWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        border: Border.all(style: BorderStyle.solid,width: 2,color: Colors.blueAccent),
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: Column(
         children: [
           CachedNetworkImage(
-            width: 191.w,
+            width: double.infinity,
             height: 128.h,
             fit: BoxFit.cover,
             imageUrl: product.images?.first??"" ,

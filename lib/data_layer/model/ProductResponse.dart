@@ -7,10 +7,10 @@ import 'Products.dart';
 
 class ProductResponse {
   ProductResponse({
-      this.products, 
-      this.total, 
-      this.skip, 
-      this.limit,});
+    this.products,
+    this.total,
+    this.skip,
+    this.limit,});
 
   ProductResponse.fromJson(dynamic json) {
     if (json['products'] != null) {
@@ -27,15 +27,15 @@ class ProductResponse {
   int? total;
   int? skip;
   int? limit;
-ProductResponse copyWith({  List<Products>? products,
-  int? total,
-  int? skip,
-  int? limit,
-}) => ProductResponse(  products: products ?? this.products,
-  total: total ?? this.total,
-  skip: skip ?? this.skip,
-  limit: limit ?? this.limit,
-);
+  ProductResponse copyWith({  List<Products>? products,
+    int? total,
+    int? skip,
+    int? limit,
+  }) => ProductResponse(  products: products ?? this.products,
+    total: total ?? this.total,
+    skip: skip ?? this.skip,
+    limit: limit ?? this.limit,
+  );
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     if (products != null) {
@@ -46,5 +46,6 @@ ProductResponse copyWith({  List<Products>? products,
     map['limit'] = limit;
     return map;
   }
+
 
 }

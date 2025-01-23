@@ -6,11 +6,11 @@
 
 class Reviews {
   Reviews({
-      this.rating, 
-      this.comment, 
-      this.date, 
-      this.reviewerName, 
-      this.reviewerEmail,});
+    this.rating,
+    this.comment,
+    this.date,
+    this.reviewerName,
+    this.reviewerEmail,});
 
   Reviews.fromJson(dynamic json) {
     rating = json['rating'];
@@ -19,22 +19,22 @@ class Reviews {
     reviewerName = json['reviewerName'];
     reviewerEmail = json['reviewerEmail'];
   }
-  int? rating;
+  num? rating;
   String? comment;
   String? date;
   String? reviewerName;
   String? reviewerEmail;
-Reviews copyWith({  int? rating,
-  String? comment,
-  String? date,
-  String? reviewerName,
-  String? reviewerEmail,
-}) => Reviews(  rating: rating ?? this.rating,
-  comment: comment ?? this.comment,
-  date: date ?? this.date,
-  reviewerName: reviewerName ?? this.reviewerName,
-  reviewerEmail: reviewerEmail ?? this.reviewerEmail,
-);
+  Reviews copyWith({  num? rating,
+    String? comment,
+    String? date,
+    String? reviewerName,
+    String? reviewerEmail,
+  }) => Reviews(  rating: rating ?? this.rating,
+    comment: comment ?? this.comment,
+    date: date ?? this.date,
+    reviewerName: reviewerName ?? this.reviewerName,
+    reviewerEmail: reviewerEmail ?? this.reviewerEmail,
+  );
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['rating'] = rating;

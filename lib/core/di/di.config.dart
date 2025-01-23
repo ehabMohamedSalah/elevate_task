@@ -18,6 +18,8 @@ import '../../domain_layer/repo_contract/product_repo.dart' as _i6;
 import '../../domain_layer/usecase/productUseCase.dart' as _i8;
 import '../../presentation/home_page/ViewModel/home_view_model_cubit.dart'
     as _i9;
+import '../../presentation/home_page/ViewModel/product_view_model_cubit.dart'
+    as _i10;
 import '../api/apiManager.dart' as _i3;
 
 extension GetItInjectableX on _i1.GetIt {
@@ -40,6 +42,8 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i8.productUsecase(gh<_i6.ProductRepo>()));
     gh.factory<_i9.HomeViewModel>(
         () => _i9.HomeViewModel(gh<_i8.productUsecase>()));
+    gh.factory<_i10.ProductViewModelCubit>(
+        () => _i10.ProductViewModelCubit(gh<_i8.productUsecase>()));
     return this;
   }
 }

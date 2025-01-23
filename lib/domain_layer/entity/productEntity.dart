@@ -29,26 +29,37 @@ import '../../data_layer/model/Reviews.dart';
 
 class ProductEntity {
   ProductEntity({
-     this.title,
-     this.description,
-     this.price,
+    this.title,
+    this.description,
+    this.price,
     this.discountPercentage,
     this.rating,
-    this.reviews,
-     this.images,
-    this.thumbnail
-    ,});
+    this.images,});
 
-   int? id;
+  ProductEntity.fromJson(dynamic json) {
+    title = json['title'];
+    description = json['description'];
+    price = json['price'];
+    discountPercentage = json['discountPercentage'];
+    rating = json['rating'];
+    images = json['images'] != null ? json['images'].cast<String>() : [];
+  }
   String? title;
   String? description;
-  String? category;
-  double? price;
-  double? discountPercentage;
-  double? rating;
+  num? price;
+  num? discountPercentage;
+  num? rating;
+  List<String>? images;
 
-    List<Reviews>? reviews;
-     List<String>? images;
-  String? thumbnail;
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['title'] = title;
+    map['description'] = description;
+    map['price'] = price;
+    map['discountPercentage'] = discountPercentage;
+    map['rating'] = rating;
+    map['images'] = images;
+    return map;
+  }
 
 }

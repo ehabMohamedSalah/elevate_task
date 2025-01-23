@@ -15,7 +15,7 @@ import '../model/ProductResponse.dart';
     try{
 
       var response=await apiManager.getRequest(Endpoint: "/products");
-      var productList = ProductResponse.fromJson(response) ;
+      var productList = ProductResponse.fromJson(response.data) ;
       return left(productList);
     }catch(error){
       return right(error.toString());

@@ -18,8 +18,7 @@ class ProductRepoImp extends ProductRepo {
     var response = await apiDatasource.GetProduct();
     return response.fold(
           (response) {
-            List<Products> listProductModel=response.products??[];
-         List<ProductEntity> productEntity = listProductModel!.map((item) => item.toProductEntity()).toList();
+             List<ProductEntity> productEntity = response.products!.map((item) => item.toProductEntity()).toList();
         return left(productEntity);
       },
           (error) => right(error),
