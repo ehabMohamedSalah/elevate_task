@@ -44,6 +44,7 @@ class ProductWidget extends StatelessWidget {
           Row(
             children: [
               Text("EGP ${getPriceAfterSale().toStringAsFixed(2)}"),
+              SizedBox(width: 10,),
               Text("EGP ${product.price}",style:  TextStyle(
                 decoration: TextDecoration.lineThrough,
                 decorationColor: Colors.blue,
